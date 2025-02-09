@@ -62,19 +62,19 @@ const HowItWorks = () => {
         {/* Cards */}
         <motion.div
           style={{ y: y1 }}
-          className="absolute left-0 top-0 w-full md:w-1/2 p-6 bg-purple-700"
+          className="absolute left-0 top-0 w-full md:w-1/2 p-6 bg-purple-700 rounded-3xl"
         >
           <Card step={steps[0]} />
         </motion.div>
         <motion.div
           style={{ y: y2 }}
-          className="absolute right-0 top-48 w-full md:w-1/2 p-6 bg-yellow-600"
+          className="absolute right-0 top-48 w-full md:w-1/2 p-6 bg-yellow-600 rounded-3xl"
         >
           <Card step={steps[1]} />
         </motion.div>
         <motion.div
           style={{ y: y3 }}
-          className="absolute left-0 top-96 w-full md:w-1/2 p-6 bg-orange-700"
+          className="absolute left-0 top-96 w-full md:w-1/2 p-6 bg-orange-700 rounded-3xl"
         >
           <Card step={steps[2]} />
         </motion.div>

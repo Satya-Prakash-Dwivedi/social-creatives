@@ -64,14 +64,14 @@ const Testimonials = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-12"
+          className="space-y-8"
         >
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
-              className="relative group"
+              className="relative group bg-gray-900/50 backdrop-blur-md border border-gray-800/50 rounded-2xl p-6 transition-all duration-300 hover:border-emerald-400/30"
             >
               <div className="absolute -left-8 top-0 h-full w-1 bg-gradient-to-b from-emerald-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -84,9 +84,12 @@ const Testimonials = () => {
                 </p>
               </div>
 
-              <div className="absolute -left-4 top-0 text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <motion.div
+                className="absolute -left-4 top-0 text-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                whileHover={{ rotate: 180 }}
+              >
                 <Quote size={24} className="rotate-180" aria-hidden="true" />
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>

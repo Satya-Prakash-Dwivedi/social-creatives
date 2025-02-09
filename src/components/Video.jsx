@@ -46,7 +46,7 @@ const VideoCard = ({ video }) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <div className="relative w-80 h-[450px] rounded-2xl overflow-hidden shadow-2xl">
+      <div className="relative w-80 h-[450px] rounded-2xl overflow-hidden shadow-2xl bg-black/50 backdrop-blur-md border border-white/10">
         <video
           className="w-full h-full object-cover"
           src={video.url}
@@ -57,7 +57,7 @@ const VideoCard = ({ video }) => {
         />
         
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/90" />
 
         {/* Play/Pause Button */}
         <AnimatePresence>
@@ -87,7 +87,7 @@ const VideoCard = ({ video }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 20 }}
         >
-          <h3 className="text-xl font-bold mb-2">{video.title}</h3>
+          <h3 className="text-2xl font-bold mb-2">{video.title}</h3>
           <div className="flex items-center gap-4 text-sm text-gray-300">
             <div className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
@@ -107,6 +107,23 @@ const VideoCard = ({ video }) => {
 const VideoGallery = () => {
   return (
     <div className="bg-black min-h-screen py-20 px-4">
+      <style>
+        {`
+          ::-webkit-scrollbar {
+            width: 8px;
+          }
+          ::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          ::-webkit-scrollbar-thumb {
+            background: #4A5568;
+            border-radius: 4px;
+          }
+          ::-webkit-scrollbar-thumb:hover {
+            background: #718096;
+          }
+        `}
+      </style>
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <motion.div
@@ -114,7 +131,7 @@ const VideoGallery = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <h2 className="text-6xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
             Featured Videos
           </h2>
           <div className="h-px w-40 mx-auto bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
